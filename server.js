@@ -18,7 +18,8 @@ app.use(cors());
 const MONGODB_URI = process.env.MONGODB_URI
 
 mongoose.connect(
-    'mongodb://localhost:27017/newsdb',
+    MONGODB_URI,
+    // 'mongodb://localhost:27017/newsdb',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
