@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
     link: String,
     title: {type: String, required: true},
     author: String,
-    date: Date,
+    date: String,
     topics: [{type: String}],
     description: String,
     image: String,
