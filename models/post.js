@@ -1,10 +1,5 @@
-# news-back-end
+const mongoose = require('mongoose');
 
-## Back-end of MERN stack, news/political/messageboard webapp
-
-
-### Current Schema:
-```
 const postSchema = new mongoose.Schema({
     // needs some stuff here
     link: String,
@@ -18,4 +13,11 @@ const postSchema = new mongoose.Schema({
 
 },
 {timestamps: true});
-```
+
+const Post = mongoose.model('Post', postSchema);
+module.exports = Post;
+
+// Do we want our model to look like this? Anything we want to add/remove?
+
+// This is just a placeholder schema for now
+////
