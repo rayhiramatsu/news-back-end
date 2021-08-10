@@ -23,17 +23,12 @@ mongoose.connect(
     // 'mongodb://localhost:27017/newsdb',
     {
         useNewUrlParser: true,
-
+        // useUnifiedTopology: true,
+        // useFindAndModify: false
     }
 );
 
-/*
-    I think the below block is functionally identical to the db.on('connected') line
-*/
 
-// mongoose.connection.once('open', ()=>{
-//     console.log('connected to mongod...');
-// });
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -43,6 +38,9 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //---------- Controllers ----------//
 const boardController = require('./controllers/board_controller.js');
 app.use('/', boardController);
+
+const userController = require('./controllers/user_controller.js');
+app.use('/users', userController);
 
 //---------- Routes ----------//
 // none! not here anyway
