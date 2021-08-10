@@ -23,8 +23,8 @@ mongoose.connect(
     // 'mongodb://localhost:27017/newsdb',
     {
         useNewUrlParser: true,
-        // useUnifiedTopology: true,
-        // useFindAndModify: false
+        useUnifiedTopology: true,
+        useFindAndModify: false
     }
 );
 
