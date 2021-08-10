@@ -1,5 +1,5 @@
 const express = require('express');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const router = express.Router();
 const User = require('../models/users.js');
 
@@ -16,6 +16,14 @@ router.post('/', (req, res) =>{
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (err, newUser) =>{
         res.json(newUser);
+    });
+});
+
+// Show
+// To search if a user already exists
+router.get('/:id', (req, res)=>{
+    router.findById(req.params.id, (err, foundUser)=>{
+        res.json(foundUser);
     });
 });
 
