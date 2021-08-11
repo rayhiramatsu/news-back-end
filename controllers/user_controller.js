@@ -19,6 +19,14 @@ router.post('/', (req, res) =>{
     });
 });
 
+// Show
+// To search if a user already exists
+router.get('/:id', (req, res)=>{
+    router.findById(req.params.id, (err, foundUser)=>{
+        res.json(foundUser);
+    });
+});
+
 // Edit
 // To update password?
 router.put('/:id', (req, res)=>{
