@@ -44,14 +44,17 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //---------- Controllers ----------//
-const boardController = require('./controllers/board_controller.js');
-app.use('/', boardController);
+const postsController = require('./controllers/posts_controller.js');
+app.use('/', postsController);
 
 const userController = require('./controllers/user_controller.js');
 app.use('/users', userController);
 
 const sessionsController = require('./controllers/sessions_controller.js');
 app.use('/sessions', sessionsController);
+
+const commentsController = require('./controllers/comments_controller.js');
+app.use('/comments', commentsController);
 
 //---------- Routes ----------//
 // none! not here anyway

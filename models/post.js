@@ -8,6 +8,7 @@ const postSchema = new mongoose.Schema({
     topics: [{type: String}],
     description: String,
     image: String,
+    comment_IDs: [{type: String}]
 
 
 },
