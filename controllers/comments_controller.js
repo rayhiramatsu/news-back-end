@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const Comment = require('../models/comments.js');
+const Post = require('../models/post.js');
 
 module.exports = router;
 
@@ -14,9 +15,15 @@ router.get('/', (req, res)=>{
 });
 // Create
 router.post('/', (req, res)=>{
+
     Comment.create(req.body, (err, newComment)=>{
         res.json(newComment);
     });
+
+    // Post.findById(req.body.)
+    //     Comment.create(req.body, (err, newComment)=>{
+    //         res.json(newComment);
+    //     });
 });
 // Edit
 router.put('/:id', (req, res)=>{
