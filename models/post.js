@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Comment = require('./comments.js')
 
 const postSchema = new mongoose.Schema({
     link: String,
@@ -8,7 +9,7 @@ const postSchema = new mongoose.Schema({
     topics: [{type: String}],
     description: String,
     image: String,
-    comment_Ids: [{type: String}]
+    comments: [Comment.schema]
 
 
 },
